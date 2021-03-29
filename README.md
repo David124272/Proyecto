@@ -1,3 +1,7 @@
+Proyecto de programación para internet de tienda de ropa online, hecho por David Macías Arellano con la presente plantilla.
+
+Info de plantilla
+
 Thank you for using our template!
 
 For more awesome templates please visit https://colorlib.com/wp/templates/

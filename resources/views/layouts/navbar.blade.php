@@ -25,20 +25,7 @@
 </head>
 
 <body>
-
-    <!-- Preloader Start-->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="{{ asset('img/logo/logo.png') }}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Preloader Start -->
-
+    @yield('preloader')
     <header>
         <!-- Header Start -->
         <div class="header-area">
@@ -114,7 +101,7 @@
                                             <li><a href="Catagori.html">Categoria</a></li>
                                             <li class="hot"><a href="#">Lo más nuevo</a>
                                                 <ul class="submenu">
-                                                    <li><a href="product_list.html"> Lista de productos</a></li>
+                                                    <li><a href="product"> Lista de productos</a></li>
                                                     <li><a href="single-product.html"> Detalle de producto</a></li>
                                                 </ul>
                                             </li>

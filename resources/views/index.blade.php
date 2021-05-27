@@ -1,202 +1,17 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tienda de ropa online </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-
-    <header>
-        <!-- Header Start -->
-        <div class="header-area">
-            <div class="main-header ">
-                <div class="header-top top-bg d-none d-lg-block">
-                    <div class="container-fluid">
-                        <div class="col-xl-12">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="header-info-left d-flex">
-                                    <div class="flag">
-                                        <img width="27px" height="16px" src="assets/img/icon/mexico.png" alt="">
-                                    </div>
-                                    <div class="select-this">
-                                        <form action="#">
-                                            <div class="select-itms">
-                                                <select name="select" id="select1">
-                                                    <option value="">MEX</option>
-                                                    <option value="">USA</option>
-                                                    <option value="">CDA</option>
-                                                    <option value="">USD</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <ul class="contact-now">
-                                        <li>+5233261456879</li>
-                                    </ul>
-                                </div>
-                                <div class="header-info-right">
-                                    <ul>
-                                        <li><a href="login.html">Mi cuenta </a></li>
-                                        <li><a href="product_list.html">Lista de deseos </a></li>
-                                        <li><a href="cart.html">Shopping</a></li>
-                                        <li><a href="cart.html">Carrito de compras</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <h2>Logotipo</h2>
-                                        <!--<img src="assets/img/logo/logo.png" alt=""> -->
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="index.html">Página princial</a></li>
-                                            <li><a href="Catagori.html">Categoria</a></li>
-                                            <li class="hot"><a href="#">Lo más nuevo</a>
-                                                <ul class="submenu">
-                                                    <li><a href="product_list.html"> Lista de productos</a></li>
-                                                    <li><a href="single-product.html"> Detalle de producto</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Detalles de blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="login.html">Iniciar sesión</a></li>
-                                                    <li><a href="cart.html">Card</a></li>
-                                                    <li><a href="elements.html">Elementos</a></li>
-                                                    <li><a href="about.html">Acerca de</a></li>
-                                                    <li><a href="confirmation.html">Confirmación</a></li>
-                                                    <li><a href="cart.html">Carrito de compras</a></li>
-                                                    <li><a href="checkout.html">Product Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contacto</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
-                                <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
-                                    <li class="d-none d-xl-block">
-                                        <div class="form-box f-right ">
-                                            <input type="text" name="Search" placeholder="Search products">
-                                            <div class="search-icon">
-                                                <i class="fas fa-search special-tag"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class=" d-none d-xl-block">
-                                        <div class="favorit-items">
-                                            <i class="far fa-heart"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="shopping-card">
-                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Registrarse</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
-
+@extends('layouts/navbar')
+@section('content')
     <main>
 
         <!-- slider Area Start -->
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider slider-height" data-background="assets/img/hero/h1_hero.jpg">
+                <div class="single-slider slider-height" data-background="{{ asset('img/hero/h1_hero.jpg') }}">
                     <div class="container">
                         <div class="row d-flex align-items-center justify-content-between">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
                                 <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/hero_man.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInRight" data-delay=".4s">60% de descuento</span>
-                                    <h1 data-animation="fadeInRight" data-delay=".6s">Colección de <br> Invierno</h1>
-                                    <p data-animation="fadeInRight" data-delay=".8s">Mejor colección de ropa 2020!</p>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                        <a href="industries.html" class="btn hero-btn">Comprar ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-slider slider-height" data-background="assets/img/hero/h1_hero.jpg">
-                    <div class="container">
-                        <div class="row d-flex align-items-center justify-content-between">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
-                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/hero_man.png" alt="">
+                                    <img src="{{ asset('img/hero/hero_man.png') }}" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
@@ -231,7 +46,7 @@
                     <div class="col-xl-4 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img">
-                                <img src="assets/img/categori/cat1.jpg" alt="">
+                                <img src="{{ asset('img/categori/cat1.jpg') }}" alt="">
                                 <div class="category-caption">
                                     <h2>Mujeres</h2>
                                     <span class="best"><a href="#">Mejores ofertas</a></span>
@@ -243,7 +58,7 @@
                     <div class="col-xl-4 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img text-center">
-                                <img src="assets/img/categori/cat2.jpg" alt="">
+                                <img src="{{ asset('img/categori/cat2.jpg') }}" alt="">
                                 <div class="category-caption">
                                     <span class="collection">Descuenntos!</span>
                                     <h2>Ropa de Invierno</h2>
@@ -255,7 +70,7 @@
                     <div class="col-xl-4 col-lg-6">
                         <div class="single-category mb-30">
                             <div class="category-img">
-                                <img src="assets/img/categori/cat3.jpg" alt="">
+                                <img src="{{ asset('img/categori/cat3.jpg') }}" alt="">
                                 <div class="category-caption">
                                     <h2>Hombres</h2>
                                     <span class="best"><a href="#">Mejores ofertas</a></span>
@@ -283,10 +98,14 @@
                             <!--Nav Button  -->
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Todos</a>
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Nuevos</a>
-                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Destacados</a>
-                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">En oferta</a>
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                        role="tab" aria-controls="nav-home" aria-selected="true">Todos</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                                        role="tab" aria-controls="nav-profile" aria-selected="false">Nuevos</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                                        role="tab" aria-controls="nav-contact" aria-selected="false">Destacados</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last"
+                                        role="tab" aria-controls="nav-contact" aria-selected="false">En oferta</a>
                                 </div>
                             </nav>
                             <!--End Nav Button  -->
@@ -301,7 +120,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product1.png" alt="">
+                                        <img src="{{ asset('img/categori/product1.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -327,7 +146,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product2.png" alt="">
+                                        <img src="{{ asset('img/categori/product2.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -350,7 +169,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product3.png" alt="">
+                                        <img src="{{ asset('img/categori/product3.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -376,7 +195,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product4.png" alt="">
+                                        <img src="{{ asset('img/categori/product4.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -399,7 +218,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product5.png" alt="">
+                                        <img src="{{ asset('img/categori/product5.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -422,7 +241,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product6.png" alt="">
+                                        <img src="{{ asset('img/categori/product6.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -453,7 +272,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product4.png" alt="">
+                                        <img src="{{ asset('img/categori/product4.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -476,7 +295,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product5.png" alt="">
+                                        <img src="{{ asset('img/categori/product5.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -499,7 +318,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product6.png" alt="">
+                                        <img src="{{ asset('img/categori/product6.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -525,7 +344,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product2.png" alt="">
+                                        <img src="{{ asset('img/categori/product2.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -548,7 +367,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product3.png" alt="">
+                                        <img src="{{ asset('img/categori/product3.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -574,7 +393,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product1.png" alt="">
+                                        <img src="{{ asset('img/categori/product1.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -605,7 +424,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product2.png" alt="">
+                                        <img src="{{ asset('img/categori/product2.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -628,7 +447,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product3.png" alt="">
+                                        <img src="{{ asset('img/categori/product3.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -654,7 +473,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product1.png" alt="">
+                                        <img src="{{ asset('img/categori/product1.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -680,7 +499,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product4.png" alt="">
+                                        <img src="{{ asset('img/categori/product4.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -703,7 +522,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product6.png" alt="">
+                                        <img src="{{ asset('img/categori/product6.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -729,7 +548,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product5.png" alt="">
+                                        <img src="{{ asset('img/categori/product5.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -757,7 +576,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product1.png" alt="">
+                                        <img src="{{ asset('img/categori/product1.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -783,7 +602,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product2.png" alt="">
+                                        <img src="{{ asset('img/categori/product2.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -806,7 +625,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product3.png" alt="">
+                                        <img src="{{ asset('img/categori/product3.png') }}" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -832,7 +651,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product4.png" alt="">
+                                        <img src="{{ asset('img/categori/product4.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -855,7 +674,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product5.png" alt="">
+                                        <img src="{{ asset('img/categori/product5.png') }}" alt="">
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
@@ -878,7 +697,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="assets/img/categori/product6.png" alt="">
+                                        <img src="{{ asset('img/categori/product6.png') }}" alt="">
                                         <div class="new-product">
                                             <span>New</span>
                                         </div>
@@ -914,7 +733,7 @@
                 <div class="container position-relative">
                     <div class="row justify-content-between align-items-end">
                         <div class="product-man position-absolute  d-none d-lg-block">
-                            <img src="assets/img/categori/card-man.png" alt="">
+                            <img src="{{ asset('img/categori/card-man.png') }}" alt="">
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
                             <div class="vertical-text">
@@ -933,7 +752,7 @@
             </div>
             <!-- Shape -->
             <div class="shape bounce-animate d-none d-md-block">
-                <img src="assets/img/categori/card-shape.png" alt="">
+                <img src="{{ asset('img/categori/card-shape.png') }}" alt="">
             </div>
         </div>
         <!-- Best Product End-->
@@ -949,13 +768,13 @@
                             <a href="#" class="btn shop1-btn">Shop Now</a>
                         </div>
                         <div class="best-left-img mb-30 d-none d-sm-block">
-                            <img src="assets/img/collection/collection1.png" alt="">
+                            <img src="{{ asset('img/collection/collection1.png') }}" alt="">
                         </div>
                     </div>
                     <!-- Mid Img -->
                     <div class="col-xl-2 col-lg-2 d-none d-lg-block">
                         <div class="best-mid-img mb-30 ">
-                            <img src="assets/img/collection/collection2.png" alt="">
+                            <img src="{{ asset('img/collection/collection2.png') }}" alt="">
                         </div>
                     </div>
                     <!-- Riht Caption -->
@@ -966,7 +785,7 @@
                                     <h4>Menz Winter<br> Jacket</h4>
                                 </div>
                                 <div class="single-img">
-                                    <img src="assets/img/collection/collection3.png" alt="">
+                                    <img src="{{ asset('img/collection/collection3.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -976,7 +795,7 @@
                                     <h4>Menz Winter<br>Jacket</h4>
                                 </div>
                                 <div class="single-img">
-                                    <img src="assets/img/collection/collection4.png" alt="">
+                                    <img src="{{ asset('img/collection/collection4.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -986,7 +805,7 @@
                                     <h4>Menz Winter<br> Jacket</h4>
                                 </div>
                                 <div class="single-img">
-                                    <img src="assets/img/collection/collection5.png" alt="">
+                                    <img src="{{ asset('img/collection/collection5.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -997,7 +816,8 @@
         <!-- Best Collection End -->
         <!-- Latest Offers Start -->
         <div class="latest-wrapper lf-padding">
-            <div class="latest-area latest-height d-flex align-items-center" data-background="assets/img/collection/latest-offer.png">
+            <div class="latest-area latest-height d-flex align-items-center"
+                data-background="assets/img/collection/latest-offer.png">
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
@@ -1018,7 +838,7 @@
                 </div>
                 <!-- man Shape -->
                 <div class="man-shape">
-                    <img src="assets/img/collection/latest-man.png" alt="">
+                    <img src="{{ asset('img/collection/latest-man.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -1058,19 +878,19 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery1.jpg" alt="">
+                            <img src="{{ asset('img/gallery/gallery1.jpg') }}" alt="">
                         </div>
                         <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery2.jpg" alt="">
+                            <img src="{{ asset('img/gallery/gallery2.jpg') }}" alt="">
                         </div>
                         <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery3.jpg" alt="">
+                            <img src="{{ asset('img/gallery/gallery3.jpg') }}" alt="">
                         </div>
                         <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery4.jpg" alt="">
+                            <img src="{{ asset('img/gallery/gallery4.jpg') }}" alt="">
                         </div>
                         <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery5.jpg" alt="">
+                            <img src="{{ asset('img/gallery/gallery5.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -1079,137 +899,42 @@
         <!-- Gallery End-->
 
     </main>
-    <footer>
 
-        <!-- Footer Start-->
-        <div class="footer-area footer-padding">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <!-- logo -->
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p>Plantilla para proyecto de programmación para internet. Hecho para una tienda de ropa online</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#"> Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>New Products</h4>
-                                <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Support</h4>
-                                <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer bottom -->
-                <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="footer-copy-right">
-                            <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved | Este template fue hecho por <a href="https://colorlib.com" target="_blank">Colorlib y editado
-                                    por mí, David Macías Arellano</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="footer-copy-right f-right">
-                            <!-- social -->
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End-->
 
-    </footer>
+@endsection
 
-    <!-- JS here -->
+<!-- JS here -->
 
-    <!-- All JS Custom Plugins Link Here here -->
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+<!-- All JS Custom Plugins Link Here here -->
+<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./assets/js/popper.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="./assets/js/jquery.slicknav.min.js"></script>
 
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="./assets/js/slick.min.js"></script>
 
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="./assets/js/wow.min.js"></script>
+<script src="./assets/js/animated.headline.js"></script>
+<script src="./assets/js/jquery.magnific-popup.js"></script>
 
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="./assets/js/jquery.scrollUp.min.js"></script>
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
+<!-- Scrollup, nice-select, sticky -->
+<script src="./assets/js/jquery.scrollUp.min.js"></script>
+<script src="./assets/js/jquery.nice-select.min.js"></script>
+<script src="./assets/js/jquery.sticky.js"></script>
 
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- contact js -->
+<script src="./assets/js/contact.js"></script>
+<script src="./assets/js/jquery.form.js"></script>
+<script src="./assets/js/jquery.validate.min.js"></script>
+<script src="./assets/js/mail-script.js"></script>
+<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
-
-</body>
-
-</html>
+<!-- Jquery Plugins, main Jquery -->
+<script src="./assets/js/plugins.js"></script>
+<script src="./assets/js/main.js"></script>

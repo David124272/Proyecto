@@ -1,16 +1,15 @@
-@extends('layouts/navbar')
+@extends('layouts/main')
 @section('content')
-    <h1>Ver producto</h1>
-
     <!-- slider Area Start-->
     <div class="slider-area ">
         <!-- Mobile Menu -->
-        <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/category.jpg">
+        <div class="single-slider slider-height2 d-flex align-items-center"
+            data-background="{{ asset('img/hero/category.jpg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>product Details</h2>
+                            <h2>Detalles de producto</h2>
                         </div>
                     </div>
                 </div>
@@ -38,28 +37,29 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="single_product_text text-center">
-                        <h3>Foam filling cotton slow <br>
-                            rebound pillows</h3>
+                        <h3> {{ $product->name }} </h3>
                         <p>
-                            Seamlessly empower fully researched growth strategies and interoperable internal or
-                            “organic” sources. Credibly innovate granular internal or “organic” sources whereas high
-                            standards in web-readiness. Credibly innovate granular internal or organic sources whereas
-                            high standards in web-readiness. Energistically scale future-proof core competencies
-                            vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal
-                            networks.
+                            {{ $product->description }}
                         </p>
+
+                        <p class="price" data-price="{{ $product->total }}">Precio por pieza: ${{ $product->total }}
+                        </p>
+
                         <div class="card_area">
+
                             <div class="product_count_area">
-                                <p>Quantity</p>
+                                <p>Cantidad</p>
                                 <div class="product_count d-inline-block">
                                     <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                    <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                                    <input class="product_count_item input-number" name="quantity" type="number" value="1"
+                                        min="0">
                                     <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                 </div>
-                                <p>$5</p>
+
+                                <p class="total"> <span id="total"> ${{ $product->total }} </span> </p>
                             </div>
                             <div class="add_to_cart">
-                                <a href="#" class="btn_3">add to cart</a>
+                                <a href="#" class="btn_3">Agregar a carrito</a>
                             </div>
                         </div>
                     </div>
@@ -67,5 +67,4 @@
             </div>
         </div>
     </div>
-
 @endsection

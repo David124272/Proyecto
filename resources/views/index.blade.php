@@ -1,4 +1,4 @@
-@extends('layouts/navbar')
+@extends('layouts/main')
 @section('preloader')
     <!-- Preloader Start -->
     <div id="preloader-active">

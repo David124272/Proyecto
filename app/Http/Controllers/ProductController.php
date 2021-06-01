@@ -36,7 +36,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->status = (int)($request->status == null);
+        $product->name = strtoupper($request->name);
+        $product->description = $request->description;
+        $product->idcategory = $request->idcategory;
+        $product->quantity = $request->quantity;
+        $product->total = $request->total;
+
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -47,7 +57,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('prodocut/product-show');
+        return view('product/product-show', compact('product'));
     }
 
     /**

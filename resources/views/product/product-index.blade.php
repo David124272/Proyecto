@@ -1,9 +1,10 @@
-@extends('layouts/navbar')
+@extends('layouts/main')
 @section('content')
     <!-- slider Area Start-->
     <div class="slider-area ">
         <!-- Mobile Menu -->
-        <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/category.jpg">
+        <div class="single-slider slider-height2 d-flex align-items-center"
+            data-background="{{ asset('img/hero/category.jpg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -60,7 +61,8 @@
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_item">
                                         <img src="assets/img/categori/product6.png" alt="" class="img-fluid">
-                                        <h3> <a href="single-product.html"> {{ $p->name }} </a> </h3>
+                                        <h3> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }} </a>
+                                        </h3>
                                         <h4> {{ $p->description }} </h4>
                                         <p>Desde ${{ $p->total }} </p>
                                     </div>

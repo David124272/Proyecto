@@ -70,10 +70,10 @@
                                                 @endif
                                             @endauth
                                         @endif
-                                        <li><a href="product_list.html">Lista de deseos </a></li>
-                                        <li><a href="cart.html">Shopping</a></li>
-                                        <li><a href="cart.html">Carrito de compras</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="#">Lista de deseos </a></li>
+                                        <li><a href="#">Shopping</a></li>
+                                        <li><a href="#">Carrito de compras</a></li>
+                                        <li><a href="#">Checkout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                             <!-- Logo -->
                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <h2>Logotipo</h2>
                                         <!--<img src="{{ asset('img/logo/logo.png') }}" -->
                                     </a>
@@ -97,8 +97,8 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">Página princial</a></li>
-                                            <li><a href="Catagori.html">Categoria</a></li>
+                                            <li><a href="/">Página princial</a></li>
+                                            <li><a href="#">Categoria</a></li>
                                             <li class="hot"><a href="#">Lo más nuevo</a>
                                                 <ul class="submenu">
                                                     <li><a href=" {{ route('product.index') }} "> Lista de
@@ -109,16 +109,16 @@
                                             </li>
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
-                                                    <li><a href="login.html">Iniciar sesión</a></li>
-                                                    <li><a href="cart.html">Card</a></li>
-                                                    <li><a href="elements.html">Elementos</a></li>
-                                                    <li><a href="about.html">Acerca de</a></li>
-                                                    <li><a href="confirmation.html">Confirmación</a></li>
-                                                    <li><a href="cart.html">Carrito de compras</a></li>
-                                                    <li><a href="checkout.html">Product Checkout</a></li>
+                                                    <li><a href="#">Iniciar sesión</a></li>
+                                                    <li><a href="#">Card</a></li>
+                                                    <li><a href="#">Elementos</a></li>
+                                                    <li><a href="#">Acerca de</a></li>
+                                                    <li><a href="#">Confirmación</a></li>
+                                                    <li><a href="#">Carrito de compras</a></li>
+                                                    <li><a href="#">Product Checkout</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contacto</a></li>
+                                            <li><a href="#">Contacto</a></li>
                                         </ul>
                                     </nav>
                                 </div>

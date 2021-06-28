@@ -1,6 +1,7 @@
 @extends('layouts/main')
 @section('content')
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- slider Area Start-->
     <div class="slider-area ">
         <!-- Mobile Menu -->
@@ -28,35 +29,11 @@
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
                             <h2>Fotografías del producto</h2>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="file" name="image" placeholder="Choose image" id="image">
-                                    @error('image')
-                                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-
                             <div class="col-md-12 mb-2">
                                 <img id="preview-image-before-upload"
                                     src="https://www.riobeauty.co.uk/images/product_image_not_found.gif" alt="preview image"
-                                    style="max-height: 250px;">
+                                    width="200">
                             </div>
-
-                            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-                            <script type="text/javascript">
-                                $(document).ready(function(e) {
-                                    $('#image').change(function() {
-                                        let reader = new FileReader();
-                                        reader.onload = (e) => {
-                                            $('#preview-image-before-upload').attr('src', e.target
-                                                .result);
-                                        }
-                                        reader.readAsDataURL(this.files[0]);
-                                    });
-                                });
-                            </script>
 
                             <a href="#" class="btn_3">Agregar foto</a>
                         </div>
@@ -65,25 +42,32 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <form action="{{ route('product.store') }}" method="POST">
+                            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mt-10">
                                     <input type="text" name="name" placeholder="Nombre del producto"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del producto'"
-                                        required class="single-input">
+                                        onfocus="this.placeholder = ''"
+                                        value="{{ old('name') ?? ($product->name ?? '') }}"
+                                        onblur="this.placeholder = 'Nombre del producto'" required class="single-input">
                                 </div>
+                                @error('name')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
 
                                 <div class="mt-10">
                                     <textarea class="single-textarea" name="description" placeholder="Descripción"
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción'"
                                         required></textarea>
                                 </div>
-
+                                @error('description')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
 
                                 <div class="input-group-icon mt-10">
                                     <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
                                     <div class="form-select" id="default-select">
-                                        <select name="idcategory" required>
+                                        <select name="category_id"
+                                            value="{{ old('category_id') ?? ($product->category_id ?? '') }}" required>
                                             <option value="0" disabled selected>Categoría</option>
                                             @foreach ($categories as $c)
                                                 <option value="{{ $c->id }}">{{ $c->name }}</option>
@@ -91,17 +75,35 @@
                                         </select>
                                     </div>
                                 </div>
+                                @error('category_id')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
 
                                 <div class="mt-10">
                                     <input type="number" min="0.0" step="0.01" name="total"
+                                        value="{{ old('total') ?? ($product->total ?? '') }}"
                                         placeholder="Precio del producto" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Precio del producto'" required class="single-input">
                                 </div>
+                                @error('total')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
 
                                 <div class="mt-10">
                                     <input type="number" min="0" step="1" name="quantity" placeholder="Cantidad"
+                                        value="{{ old('quantity') ?? ($product->quantity ?? '') }}"
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Cantidad'" required
                                         class="single-input">
+                                </div>
+                                @error('quantity')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+
+                                <div class="col-md-10">
+                                    <input type="file" multiple name="files[]" placeholder="Choose image" id="image">
+                                    @error('image')
+                                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-12 form-group">
@@ -120,6 +122,19 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $('#image').change(function() {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#preview-image-before-upload').attr('src', e.target
+                        .result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
+        });
+    </script>
 
     <!--================End Single Product Area =================-->
 

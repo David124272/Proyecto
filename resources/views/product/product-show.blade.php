@@ -22,17 +22,13 @@
     <div class="product_image_area">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <div class="product_img_slide owl-carousel">
-                        <div class="single_product_img">
-                            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-                        </div>
-                        <div class="single_product_img">
-                            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-                        </div>
-                        <div class="single_product_img">
-                            <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-                        </div>
+                        @foreach ($product->files as $image)
+                            <div class="single_product_img">
+                                <img src="{{ asset('storage/' . $image->route) }}" class="img-fluid">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -52,7 +48,7 @@
                                 <div class="product_count d-inline-block">
                                     <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
                                     <input class="product_count_item input-number" name="quantity" type="number" value="1"
-                                        min="0">
+                                        min="0" max="{{ $product->quantity }}">
                                     <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                 </div>
 

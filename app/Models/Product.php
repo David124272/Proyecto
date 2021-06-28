@@ -9,4 +9,9 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'description', 'idcategory', 'total', 'status', 'quantity'];
+
+    public function files()
+    {
+        return $this->belongsToMany(File::class, 'product_file');
+    }
 }

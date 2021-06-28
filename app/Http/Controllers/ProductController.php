@@ -38,15 +38,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|min:5|max:255',
+            'description' => 'required|string|min:5|max:255',
+            'category_id' => 'required',
+            'quantity' => 'required',
+            'total' => 'required'
+        ]);
+
         $product = new Product();
         $product->status = (int)($request->status == null);
         $product->name = strtoupper($request->name);
-        $product->description = $request->description;
-        $product->idcategory = $request->idcategory;
+        $product->description = strtoupper($request->description);
+        $product->category_id = $request->category_id;
         $product->quantity = $request->quantity;
         $product->total = $request->total;
 
         $product->save();
+
+        $files_id = \App\Http\Controllers\FileController::multipleStore($request);
+        $product->files()->attach($files_id);
 
         return redirect()->route('product.index');
     }

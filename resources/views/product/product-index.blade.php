@@ -60,10 +60,10 @@
                             @foreach ($products as $p)
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="assets/img/categori/product6.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="" height="200px">
                                         <h3> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }} </a>
                                         </h3>
-                                        <h4> {{ $p->description }} </h4>
+                                        <p> {{ $p->description }} </p>
                                         <p>Desde ${{ $p->total }} </p>
                                     </div>
                                 </div>

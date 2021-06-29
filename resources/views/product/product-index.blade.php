@@ -18,65 +18,125 @@
     </div>
     <!-- slider Area End-->
 
-    <!-- product list part start-->
-    <section class="product_list section_padding">
+    <section class="latest-product-area latest-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="product_sidebar">
-                        <div class="single_sedebar">
-                            <form action="#">
-                                <input type="text" name="#" placeholder="Search keyword">
-                                <i class="ti-search"></i>
-                            </form>
+            <div class="row product-btn d-flex justify-content-between">
+                <div class="properties__button">
+                    <!--Nav Button  -->
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                role="tab" aria-controls="nav-home" aria-selected="true">Todos</a>
+                            @foreach ($categories as $c)
+                                <a class="nav-item nav-link" id="nav-{{ $c->id }}-tab" data-toggle="tab"
+                                    href="#nav-{{ $c->id }}" role="tab" aria-controls="nav-{{ $c->id }}"
+                                    aria-selected="false">{{ $c->name }}</a>
+                            @endforeach
                         </div>
-                        <div class="single_sedebar">
-                            <div class="select_option">
-                                <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="#">Category 1</a></p>
-                                    <p><a href="#">Category 2</a></p>
-                                    <p><a href="#">Category 3</a></p>
-                                    <p><a href="#">Category 4</a></p>
+                    </nav>
+                    <!--End Nav Button  -->
+                </div>
+                <div class="select-this d-flex">
+                    <div class="featured">
+                        <span>Ordenar por: </span>
+                    </div>
+                    <form action="#">
+                        <div class="select-itms">
+                            <select name="select" id="select1">
+                                <option value="">Nombre</option>
+                                <option value="">Fecha</option>
+                                <option value="">Precio</option>
+                                <option value="">Stock</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Nav Card -->
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row">
+                        @foreach ($products as $p)
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                        <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            @for ($i = 0; $i < 4; $i++)
+                                                @if ($p->stars > $i) <i
+                                                class="far fa-star"></i>
+                                            @else
+                                                <i class="far fa-star low-star"></i> @endif
+                                            @endfor
+
+                                            <i class="far fa-star low-star"></i>
+                                        </div>
+                                        <h4> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }}
+                                            </a>
+                                        </h4>
+                                        <p> {{ $p->description }} </p>
+                                        <div class="price">
+                                            <ul>
+                                                <li>${{ $p->total }}</li>
+                                                <li class="discount">$60.00</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single_sedebar">
-                            <div class="select_option">
-                                <div class="select_option_list">Type <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="#">Type 1</a></p>
-                                    <p><a href="#">Type 2</a></p>
-                                    <p><a href="#">Type 3</a></p>
-                                    <p><a href="#">Type 4</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="product_list">
+
+                @foreach ($categories as $c)
+                    <div class="tab-pane fade show active" id="nav-{{ $c->id }}" role="tabpanel"
+                        aria-labelledby="nav-{{ $c->id }}-tab">
                         <div class="row">
-                            @foreach ($products as $p)
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="single_product_item">
-                                        <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="" height="200px">
-                                        <h3> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }} </a>
-                                        </h3>
-                                        <p> {{ $p->description }} </p>
-                                        <p>Desde ${{ $p->total }} </p>
+                            @foreach ($c->products as $p)
+                                <div class="col-xl-4 col-lg-4 col-md-6">
+                                    <div class="single-product mb-60">
+                                        <div class="product-img">
+                                            <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
+                                            <div class="new-product">
+                                                <span>New</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-caption">
+                                            <div class="product-ratting">
+                                                @for ($i = 0; $i < 4; $i++)
+                                                    @if ($p->stars > $i) <i
+                                                    class="far fa-star"></i>
+                                                @else
+                                                    <i class="far fa-star low-star"></i> @endif
+                                                @endfor
+
+                                                <i class="far fa-star low-star"></i>
+                                            </div>
+                                            <h4> <a href=" {{ route('product.show', $p->id) }} ">
+                                                    {{ $p->name }}
+                                                </a>
+                                            </h4>
+                                            <p> {{ $p->description }} </p>
+                                            <div class="price">
+                                                <ul>
+                                                    <li>${{ $p->total }}</li>
+                                                    <li class="discount">$60.00</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
-                        <div class="load_more_btn text-center">
-                            <a href="#" class="btn_3">Load More</a>
-                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
+            <!-- End Nav Card -->
         </div>
     </section>
-    <!-- product list part end-->
-
 @endsection

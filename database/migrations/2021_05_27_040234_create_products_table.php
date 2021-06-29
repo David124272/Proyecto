@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->boolean('status');
             $table->timestamps();
+            $table->integer('stars');
         });
     }
 

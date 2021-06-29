@@ -87,8 +87,7 @@
                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                                 <div class="logo">
                                     <a href="/">
-                                        <h2>Logotipo</h2>
-                                        <!--<img src="{{ asset('img/logo/logo.png') }}" -->
+                                        <img src="{{ asset('img/logo/logo.png') }}">
                                     </a>
                                 </div>
                             </div>
@@ -98,7 +97,16 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="/">Página princial</a></li>
-                                            <li><a href="#">Categoria</a></li>
+                                            <li><a href=" {{ route('product.index') }} ">Categorías</a>
+                                                <ul class="submenu">
+                                                    @foreach ($categories as $c)
+                                                        <li>
+                                                            <a href="{{ route('product.filter', $c) }}">{{ $c->name }}
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
                                             <li class="hot"><a href="#">Lo más nuevo</a>
                                                 <ul class="submenu">
                                                     <li><a href=" {{ route('product.index') }} "> Lista de
@@ -158,6 +166,90 @@
     </header>
 
     @yield('content')
+
+    <!-- Latest Offers Start -->
+    <div class="latest-wrapper lf-padding">
+        <div class="latest-area latest-height d-flex align-items-center"
+            data-background="{{ asset('img/collection/latest-offer.png') }}">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
+                        <div class="latest-caption">
+                            <h2>Get Our<br>Latest Offers News</h2>
+                            <p>Subscribe news latter</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-6 ">
+                        <div class="latest-subscribe">
+                            <form action="#">
+                                <input type="email" placeholder="Your email here">
+                                <button>Shop Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- man Shape -->
+            <div class="man-shape">
+                <img src="{{ asset('img/collection/latest-man.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Latest Offers End -->
+    <!-- Shop Method Start-->
+    <div class="shop-method-area section-padding30">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="ti-package"></i>
+                        <h6>Free Shipping Method</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="ti-unlock"></i>
+                        <h6>Secure Payment System</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="ti-reload"></i>
+                        <h6>Secure Payment System</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Method End-->
+    <!-- Gallery Start-->
+    <div class="gallery-wrapper lf-padding">
+        <div class="gallery-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gallery-items">
+                        <img src="{{ asset('img/gallery/gallery1.jpg') }}" alt="">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="{{ asset('img/gallery/gallery2.jpg') }}" alt="">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="{{ asset('img/gallery/gallery3.jpg') }}" alt="">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="{{ asset('img/gallery/gallery4.jpg') }}" alt="">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="{{ asset('img/gallery/gallery5.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End-->
 
     @extends('layouts/footer')
 

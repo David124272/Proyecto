@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -20,14 +20,24 @@ class ProductController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(Category $category)
+    {
+        $products = $category->products;
+        return view('product/product-index', compact('products'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        $categories = Category::all()->where('status', '=', true);
-        return view('product/product-form', compact('categories'));
+        return view('product/product-form');
     }
 
     /**
@@ -48,6 +58,7 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->status = (int)($request->status == null);
+        $product->stars = 0;
         $product->name = strtoupper($request->name);
         $product->description = strtoupper($request->description);
         $product->category_id = $request->category_id;

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use DeepCopy\Filter\Filter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/product/filter/{category}', [ProductController::class, 'filter'])->name('product.filter');
 Route::resource('product', ProductController::class);

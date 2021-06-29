@@ -8,10 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'idcategory', 'total', 'status', 'quantity'];
+    protected $fillable = ['name', 'description', 'category_id', 'total', 'status', 'quantity'];
 
     public function files()
     {
         return $this->belongsToMany(File::class, 'product_file');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -15,6 +15,11 @@ class Product extends Model
         return $this->belongsToMany(File::class, 'product_file');
     }
 
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class, 'cart_product')->withPivot('quantity');
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

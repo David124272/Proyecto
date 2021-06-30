@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -19,15 +21,32 @@ class ProductController extends Controller
         return view('product/product-index', compact('products'));
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function filter(Category $category)
     {
         $products = $category->products;
-        return view('product/product-index', compact('products'));
+        return view('product/product-index', compact('products', 'category'));
+    }
+
+    public function addToCart(Request $request)
+    {
+        // Add to cart_product
+        if (Auth::user()->carts->isEmpty()) {
+            $cart = new Cart();
+            $cart->status = 1;
+            $cart->user_id = Auth::user()->id;
+            $cart->save();
+        } else {
+            $cart = Auth::user()->carts->where('status', 1)->first();
+        }
+
+        $cart->products()->attach(request()->product_id, ['quantity' => request()->quantity]);
+
+        // Update quantity
+        $product = Product::find($request->product_id);
+        $product->quantity = $product->quantity - $request->quantity;
+        $product->save();
+
+        return view('product.product-index');
     }
 
     /**

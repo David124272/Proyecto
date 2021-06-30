@@ -9,7 +9,11 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Listado de productos</h2>
+                            @if (isset($category))
+                                <h2>{{ $category->name }}</h2>
+                            @else
+                                <h2>Todos los productos</h2>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -23,17 +27,19 @@
             <div class="row product-btn d-flex justify-content-between">
                 <div class="properties__button">
                     <!--Nav Button  -->
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                                role="tab" aria-controls="nav-home" aria-selected="true">Todos</a>
-                            @foreach ($categories as $c)
-                                <a class="nav-item nav-link" id="nav-{{ $c->id }}-tab" data-toggle="tab"
-                                    href="#nav-{{ $c->id }}" role="tab" aria-controls="nav-{{ $c->id }}"
-                                    aria-selected="false">{{ $c->name }}</a>
-                            @endforeach
-                        </div>
-                    </nav>
+                    @if (!isset($category->id))
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                    role="tab" aria-controls="nav-home" aria-selected="true">Todos</a>
+                                @foreach ($categories as $c)
+                                    <a class="nav-item nav-link" id="nav-{{ $c->id }}-tab" data-toggle="tab"
+                                        href="#nav-{{ $c->id }}" role="tab" aria-controls="nav-{{ $c->id }}"
+                                        aria-selected="false">{{ $c->name }}</a>
+                                @endforeach
+                            </div>
+                        </nav>
+                    @endif
                     <!--End Nav Button  -->
                 </div>
                 <div class="select-this d-flex">
@@ -62,19 +68,17 @@
                                     <div class="product-img">
                                         <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
                                         <div class="new-product">
-                                            <span>New</span>
+                                            <span>Nuevo</span>
                                         </div>
                                     </div>
                                     <div class="product-caption">
                                         <div class="product-ratting">
-                                            @for ($i = 0; $i < 4; $i++)
-                                                @if ($p->stars > $i) <i
-                                                class="far fa-star"></i>
+                                            @for ($i = 0; $i < 5; $i++)
+                                                @if ($p->stars > $i) <i class="far
+                                                fa-star"></i>
                                             @else
                                                 <i class="far fa-star low-star"></i> @endif
                                             @endfor
-
-                                            <i class="far fa-star low-star"></i>
                                         </div>
                                         <h4> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }}
                                             </a>
@@ -93,48 +97,48 @@
                     </div>
                 </div>
 
-                @foreach ($categories as $c)
-                    <div class="tab-pane fade show active" id="nav-{{ $c->id }}" role="tabpanel"
-                        aria-labelledby="nav-{{ $c->id }}-tab">
-                        <div class="row">
-                            @foreach ($c->products as $p)
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="single-product mb-60">
-                                        <div class="product-img">
-                                            <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
-                                            <div class="new-product">
-                                                <span>New</span>
+                @if (!isset($category->id))
+                    @foreach ($categories as $c)
+                        <div class="tab-pane fade show" id="nav-{{ $c->id }}" role="tabpanel"
+                            aria-labelledby="nav-{{ $c->id }}-tab">
+                            <div class="row">
+                                @foreach ($c->products as $p)
+                                    <div class="col-xl-4 col-lg-4 col-md-6">
+                                        <div class="single-product mb-60">
+                                            <div class="product-img">
+                                                <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
+                                                <div class="new-product">
+                                                    <span>Nuevo</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="product-caption">
-                                            <div class="product-ratting">
-                                                @for ($i = 0; $i < 4; $i++)
-                                                    @if ($p->stars > $i) <i
-                                                    class="far fa-star"></i>
-                                                @else
-                                                    <i class="far fa-star low-star"></i> @endif
-                                                @endfor
-
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
-                                            <h4> <a href=" {{ route('product.show', $p->id) }} ">
-                                                    {{ $p->name }}
-                                                </a>
-                                            </h4>
-                                            <p> {{ $p->description }} </p>
-                                            <div class="price">
-                                                <ul>
-                                                    <li>${{ $p->total }}</li>
-                                                    <li class="discount">$60.00</li>
-                                                </ul>
+                                            <div class="product-caption">
+                                                <div class="product-ratting">
+                                                    @for ($i = 0; $i < 4; $i++)
+                                                        @if ($p->stars > $i) <i
+                                                        class="far fa-star"></i>
+                                                    @else
+                                                        <i class="far fa-star low-star"></i> @endif
+                                                    @endfor
+                                                </div>
+                                                <h4> <a href=" {{ route('product.show', $p->id) }} ">
+                                                        {{ $p->name }}
+                                                    </a>
+                                                </h4>
+                                                <p> {{ $p->description }} </p>
+                                                <div class="price">
+                                                    <ul>
+                                                        <li>${{ $p->total }}</li>
+                                                        <li class="discount">$60.00</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
             <!-- End Nav Card -->
         </div>

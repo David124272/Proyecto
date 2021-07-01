@@ -59,6 +59,8 @@
                                     <ul>
                                         @if (Route::has('login'))
                                             @auth
+                                                <li><a href="{{ url('/dashboard') }}">Tablero</a></li>
+                                                <li><a href="#">Mis compras</a></li>
                                                 <li>
                                                     <form method="POST" action="{{ route('logout') }}">
                                                         @csrf
@@ -67,8 +69,6 @@
                                                             sesión</a>
                                                     </form>
                                                 </li>
-                                                <li><a href="{{ url('/dashboard') }}">Tablero</a></li>
-                                                <li><a href="#">Mis compras</a></li>
                                             @else
                                                 <li><a href="{{ route('login') }}">Iniciar sesión</a>
                                                 </li>

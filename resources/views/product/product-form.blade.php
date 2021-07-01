@@ -35,7 +35,7 @@
                                     width="200">
                             </div>
 
-                            <a href="#" class="btn_3">Agregar foto</a>
+                            <!--a href="#" class="btn_3">Agregar foto</a-->
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,8 @@
                                 @enderror
 
                                 <div class="col-md-10">
-                                    <input type="file" multiple name="files[]" placeholder="Choose image" id="image">
+                                    <input required type="file" multiple name="files[]" placeholder="Choose image"
+                                        id="image">
                                     @error('image')
                                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror

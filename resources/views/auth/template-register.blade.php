@@ -40,7 +40,7 @@
                         <div class="login_part_form_iner">
                             <h3>¡Sé parte de nosotros!<br>
                                 Crea una cuenta y no te pierdas de nada</h3>
-                            <x-jet-validation-errors class="mb-4" />
+                            <x-jet-validation-errors class="alert alert-danger mt-1 mb-1" />
                             <form class="row contact_form" method="POST" action="{{ route('register') }}">
                                 @csrf
 

@@ -16,8 +16,10 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert(['name' => 'Ropa para hombres', 'status' => true]);
         DB::table('categories')->insert(['name' => 'Ropa para mujeres', 'status' => true]);
+        DB::table('categories')->insert(['name' => 'Calzado para hombres', 'status' => true]);
+        DB::table('categories')->insert(['name' => 'Calzado para mujeres', 'status' => true]);
+        DB::table('categories')->insert(['name' => 'Ropa para niños', 'status' => true]);
+        DB::table('categories')->insert(['name' => 'Calzado para niños', 'status' => true]);
         DB::table('categories')->insert(['name' => 'Accesorios', 'status' => true]);
-        DB::table('categories')->insert(['name' => 'Ofertas', 'status' => true]);
-        DB::table('categories')->insert(['name' => 'Colección de invierno', 'status' => true]);
     }
 }

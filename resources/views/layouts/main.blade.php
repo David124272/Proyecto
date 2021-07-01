@@ -59,7 +59,16 @@
                                     <ul>
                                         @if (Route::has('login'))
                                             @auth
+                                                <li>
+                                                    <form method="POST" action="{{ route('logout') }}">
+                                                        @csrf
+                                                        <a href="#"
+                                                            onclick="event.preventDefault();this.closest('form').submit();">Cerrar
+                                                            sesión</a>
+                                                    </form>
+                                                </li>
                                                 <li><a href="{{ url('/dashboard') }}">Tablero</a></li>
+                                                <li><a href="#">Mis compras</a></li>
                                             @else
                                                 <li><a href="{{ route('login') }}">Iniciar sesión</a>
                                                 </li>
@@ -70,10 +79,6 @@
                                                 @endif
                                             @endauth
                                         @endif
-                                        <li><a href="#">Lista de deseos </a></li>
-                                        <li><a href="#">Shopping</a></li>
-                                        <li><a href="#">Carrito de compras</a></li>
-                                        <li><a href="#">Checkout</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -33,32 +33,34 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="single_product_text text-center">
-                        <h3> {{ $product->description }} </h3>
-                        <p class="price" data-price="{{ $product->total }}">Precio por pieza: ${{ $product->total }}
-                        </p>
+                        <p> {{ $product->description }} </p>
+                        <h3 class="price" data-price="{{ $product->total }}">${{ $product->total }}
+                        </h3>
 
                         <div class="card_area">
-                            @auth
-                                <form action="{{ route('product.cart') }}" method="POST">
-                                    @csrf
-                                    <div class="product_count_area">
-                                        <p>Cantidad</p>
-                                        <div class="product_count d-inline-block">
-                                            <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                            <input class="product_count_item input-number" name="quantity" type="number"
-                                                value="1" min="1" max="{{ $product->quantity }}">
-                                            <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-                                        </div>
-                                        <p class="total"> <span id="total"> ${{ $product->total }} </span> </p>
+                            <form action="{{ route('product.cart') }}" method="POST">
+                                @csrf
+                                <div class="product_count_area">
+                                    <p>Cantidad</p>
+                                    <div class="product_count d-inline-block">
+                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="product_count_item input-number" name="quantity" type="number"
+                                            value="1" min="1" max="{{ $product->quantity }}">
+                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                     </div>
-                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <div class="add_to_cart">
+                                    <p class="total"> <span id="total"> ${{ $product->total }} </span> </p>
+                                </div>
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <div class="add_to_cart">
+                                    @auth
                                         <button type="submit" value="submit" class="btn_3">
                                             Agregar a carrito
                                         </button>
-                                    </div>
-                                </form>
-                            @endauth
+                                    @else
+                                        <a href="{{ route('login') }}" class="btn_3">Agregar a carrito</a>
+                                    @endauth
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

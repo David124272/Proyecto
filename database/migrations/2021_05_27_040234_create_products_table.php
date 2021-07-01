@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->float('total');
             $table->text('description');
             $table->foreignId('category_id')->constrained();
+            $table->integer('discount');
             $table->integer('quantity');
             $table->boolean('status');
             $table->timestamps();

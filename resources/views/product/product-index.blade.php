@@ -66,7 +66,8 @@
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
-                                        <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
+                                        <img src="{{ asset('storage/' . $p->files[0]->route) }}"
+                                            style="width: 24vw; min-width: 100px;" alt="">
                                         <div class="new-product">
                                             <span>Nuevo</span>
                                         </div>
@@ -83,11 +84,12 @@
                                         <h4> <a href=" {{ route('product.show', $p->id) }} "> {{ $p->name }}
                                             </a>
                                         </h4>
-                                        <p> {{ $p->description }} </p>
                                         <div class="price">
                                             <ul>
-                                                <li>${{ $p->total }}</li>
-                                                <li class="discount">$60.00</li>
+                                                <li>${{ $p->total - ($p->discount * 100) / $p->total }}</li>
+                                                @if ($p->discount != 0)
+                                                    <li class="discount">${{ $p->total }}</li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -106,7 +108,8 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single-product mb-60">
                                             <div class="product-img">
-                                                <img src="{{ asset('storage/' . $p->files[0]->route) }}" alt="">
+                                                <img src="{{ asset('storage/' . $p->files[0]->route) }}"
+                                                    style="width: 24vw; min-width: 100px;" alt="">
                                                 <div class="new-product">
                                                     <span>Nuevo</span>
                                                 </div>
@@ -124,11 +127,12 @@
                                                         {{ $p->name }}
                                                     </a>
                                                 </h4>
-                                                <p> {{ $p->description }} </p>
                                                 <div class="price">
                                                     <ul>
-                                                        <li>${{ $p->total }}</li>
-                                                        <li class="discount">$60.00</li>
+                                                        <li>${{ $p->total - ($p->discount * 100) / $p->total }}</li>
+                                                        @if ($p->discount != 0)
+                                                            <li class="discount">${{ $p->total }}</li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </div>

@@ -40,7 +40,7 @@
                         <div class="login_part_form_iner">
                             <h3>¡Bienvenido de vuelta! <br>
                                 Por favor, inicia sesión ahora</h3>
-                            <x-jet-validation-errors class="mb-4" />
+                            <x-jet-validation-errors class="alert alert-danger mt-1 mb-1" />
 
                             @if (session('status'))
                                 <div class="mb-4 font-medium text-sm text-green-600">

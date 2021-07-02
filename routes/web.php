@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 use DeepCopy\Filter\Filter;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,7 @@ Route::resource('product', ProductController::class);
 
 // Cart
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show')->middleware('auth');
+Route::get('cart/clear/{cart}', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
+Route::get('cart/checkout/{cart}', [CartController::class, 'checkout'])->name('cart.checkout')->middleware('auth');
+
+Route::resource('purchase', PurchaseController::class)->only('store')->middleware('auth');

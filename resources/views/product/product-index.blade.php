@@ -104,7 +104,7 @@
                         <div class="tab-pane fade show" id="nav-{{ $c->id }}" role="tabpanel"
                             aria-labelledby="nav-{{ $c->id }}-tab">
                             <div class="row">
-                                @foreach ($c->products as $p)
+                                @foreach ($c->products()->with('files')->get() as $p)
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single-product mb-60">
                                             <div class="product-img">

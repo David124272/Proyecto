@@ -17,18 +17,20 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with(['files:id,route'])->get();
         return view('product/product-index', compact('products'));
     }
 
     public function filter(Category $category)
     {
-        $products = $category->products;
+        $products = $category->products()->with('files')->get();
         return view('product/product-index', compact('products', 'category'));
     }
 
     public function addToCart(Request $request)
     {
+        $this->middleware(['auth', 'verified']);
+
         // Add to cart_product
         if (Auth::user()->carts->isEmpty()) {
             $cart = new Cart();
@@ -39,14 +41,17 @@ class ProductController extends Controller
             $cart = Auth::user()->carts->where('status', 1)->first();
         }
 
-        $cart->products()->attach(request()->product_id, ['quantity' => request()->quantity]);
+        $product = $cart->products()->where('id', $request->product_id)->first();
 
-        // Update quantity
-        $product = Product::find($request->product_id);
-        $product->quantity = $product->quantity - $request->quantity;
-        $product->save();
+        if ($product != null) {
+            //Update quantity
+            $product->pivot->quantity += $request->quantity;
+            $product->pivot->save();
+        } else {
+            $cart->products()->attach(request()->product_id, ['quantity' => request()->quantity]);
+        }
 
-        return view('product.product-index');
+        return redirect()->route('product.index');
     }
 
     /**

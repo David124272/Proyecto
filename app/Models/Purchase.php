@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Purchase extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'phone', 'street', 'int_number', 'ext_number', 'country', 'state', 'zipcode', 'payment_id'];
+    protected $fillable = ['user_id', 'phone', 'cart_id', 'street', 'total', 'int_number', 'ext_number', 'country', 'state', 'zipcode', 'payment_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

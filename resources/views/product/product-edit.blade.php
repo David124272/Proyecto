@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Agregar producto</h2>
+                            <h2>Editar producto</h2>
                         </div>
                     </div>
                 </div>
@@ -35,8 +35,7 @@
                         <div class="login_part_text_iner">
                             <h2>Fotografías del producto</h2>
                             <div class="col-md-12 mb-2">
-                                <img id="preview-image-before-upload"
-                                    src="https://www.riobeauty.co.uk/images/product_image_not_found.gif" alt="preview image"
+                                <img src="{{ asset('storage/' . $product->files[0]->route) }}" alt="preview image"
                                     width="200">
                             </div>
 
@@ -59,28 +58,30 @@
                                 @endforeach
                             @endif
 
-                            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('product.update', $product) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @method('PATCH')
                                 @csrf
                                 <div class="input-group-icon mt-10">
                                     <div class="icon"><i class="fa fa-cubes" aria-hidden="true"></i></div>
                                     <input type="text" name="name" placeholder="Nombre del producto"
-                                        value="{{ old('name') ?? ($product->name ?? '') }}" required class="single-input">
+                                        value="{{ $product->name }}" required class="single-input">
                                 </div>
 
                                 <div class="mt-10">
                                     <textarea class="single-textarea" name="description" placeholder="Descripción"
-                                        required></textarea>
+                                        required> {{ $product->description }} </textarea>
                                 </div>
 
                                 <div class="input-group-icon mt-10">
                                     <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                                    <div class="form-select" id="default-select">
-                                        <select name="category_id"
-                                            value="{{ old('category_id') ?? ($product->category_id ?? '') }}" required>
+                                    <div class="form-select">
+                                        <select name="category_id" value="{{ $product->category_id }}" required>
                                             <option value="0" disabled selected>Categoría</option>
                                             @foreach ($categories as $c)
-                                                <option @if ($c->id == old('category_id')) selected @endif value="{{ $c->id }}">
-                                                    {{ $c->name }}</option>
+                                                <option @if ($c->id == $product->category_id)
+                                                    selected
+                                                @endif value="{{ $c->id }}">{{ $c->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -88,33 +89,27 @@
 
                                 <div class="input-group-icon mt-10">
                                     <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                                    <input type="number" min="0.0" step="0.01" name="total"
-                                        value="{{ old('total') ?? ($product->total ?? '') }}"
+                                    <input type="number" min="0.0" step="0.01" name="total" value="{{ $product->total }}"
                                         placeholder="Precio del producto" required class="single-input">
                                 </div>
 
                                 <div class="input-group-icon mt-10">
                                     <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
                                     <input type="number" min="0" step="1" name="quantity" placeholder="Cantidad"
-                                        value="{{ old('quantity') ?? ($product->quantity ?? '') }}" required
-                                        class="single-input">
+                                        value="{{ $product->quantity }}" required class="single-input">
                                 </div>
 
                                 <!--div class="input-group-icon mt-10">
-                                                                        <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                                                                        <input class="single-input" type="number" min="0" max="100" id="discount"
-                                                                            name="discount" value="" placeholder="Descuento (%)">
-                                                                    </div>
+                                                                                            <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                                                                            <input class="single-input" type="number" min="0" max="100" id="discount"
+                                                                                                name="discount" value="" placeholder="Descuento (%)">
+                                                                                        </div>
 
-                                                                    <div-- class="mt-10">
-                                                                        <input type="range" class="single-input" min="0" max="100"
-                                                                            onchange="updateTextInput(this.value);">
-                                                                    </div-->
+                                                                                        <div-- class="mt-10">
+                                                                                            <input type="range" class="single-input" min="0" max="100"
+                                                                                                onchange="updateTextInput(this.value);">
+                                                                                        </div-->
 
-                                <div class="mt-10">
-                                    <input required type="file" multiple name="files[]" placeholder="Choose image"
-                                        id="image">
-                                </div>
 
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
@@ -122,7 +117,7 @@
                                         <label for="f-option">¿Desactivar producto?</label>
                                     </div>
                                     <button type="submit" value="submit" class="btn_3">
-                                        Agregar producto
+                                        Actualizar producto
                                     </button>
                                 </div>
                             </form>

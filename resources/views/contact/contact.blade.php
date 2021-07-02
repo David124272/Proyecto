@@ -1,181 +1,6 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+@extends('layouts.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>eCommerce HTML-5 Template </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-
-    <header>
-        <!-- Header Start -->
-        <div class="header-area">
-            <div class="main-header ">
-                <div class="header-top top-bg d-none d-lg-block">
-                    <div class="container-fluid">
-                        <div class="col-xl-12">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="header-info-left d-flex">
-                                    <div class="flag">
-                                        <img src="assets/img/icon/header_icon.png" alt="">
-                                    </div>
-                                    <div class="select-this">
-                                        <form action="#">
-                                            <div class="select-itms">
-                                                <select name="select" id="select1">
-                                                    <option value="">USA</option>
-                                                    <option value="">SPN</option>
-                                                    <option value="">CDA</option>
-                                                    <option value="">USD</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <ul class="contact-now">
-                                        <li>+777 2345 7886</li>
-                                    </ul>
-                                </div>
-                                <div class="header-info-right">
-                                    <ul>
-                                        <li><a href="login.html">My Account </a></li>
-                                        <li><a href="product_list.html">Wish List </a></li>
-                                        <li><a href="cart.html">Shopping</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="Catagori.html">Catagori</a></li>
-                                            <li class="hot"><a href="#">Latest</a>
-                                                <ul class="submenu">
-                                                    <li><a href="product_list.html"> Product list</a></li>
-                                                    <li><a href="single-product.html"> Product Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="login.html">Login</a></li>
-                                                    <li><a href="cart.html">Card</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="confirmation.html">Confirmation</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Product Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
-                                <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
-                                    <li class="d-none d-xl-block">
-                                        <div class="form-box f-right ">
-                                            <input type="text" name="Search" placeholder="Search products">
-                                            <div class="search-icon">
-                                                <i class="fas fa-search special-tag"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class=" d-none d-xl-block">
-                                        <div class="favorit-items">
-                                            <i class="far fa-heart"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="shopping-card">
-                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Sign in</a></li>
-                                </ul>
-                            </div>
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
-
-    <!-- slider Area Start-->
-    <div class="slider-area ">
-        <!-- Mobile Menu -->
-        <div class="single-slider slider-height2 d-flex align-items-center"
-            data-background="assets/img/hero/category.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="hero-cap text-center">
-                            <h2>Contact Us</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider Area End-->
+@section('content')
 
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
@@ -417,17 +242,13 @@
                                     style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
                                     <div
                                         style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
-                                        <div
-                                            style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;">
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;">
                                         </div>
-                                        <div
-                                            style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;">
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;">
                                         </div>
-                                        <div
-                                            style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
                                         </div>
-                                        <div
-                                            style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;">
+                                        <div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;">
                                         </div>
                                     </div>
                                 </div>
@@ -445,7 +266,8 @@
                                             draggable="false"
                                             style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
                                     </div>
-                                </a></div>
+                                </a>
+                            </div>
                             <div
                                 style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 315px; top: 150px;">
                                 <div style="padding: 0px 0px 10px; font-size: 16px; box-sizing: border-box;">Map Data
@@ -469,7 +291,8 @@
                                     <div
                                         style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
                                         <a style="text-decoration: none; cursor: pointer; display: none;">Map
-                                            Data</a><span>Map data ©2019 Google</span></div>
+                                            Data</a><span>Map data ©2019 Google</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;">
@@ -490,7 +313,8 @@
                                     <a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank"
                                         rel="noopener"
                                         style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of
-                                        Use</a></div>
+                                        Use</a>
+                                </div>
                             </div><button draggable="false" title="Toggle fullscreen view"
                                 aria-label="Toggle fullscreen view" type="button"
                                 class="gm-control-active gm-fullscreen-control"
@@ -515,7 +339,8 @@
                                         title="Report errors in the road map or imagery to Google"
                                         href="https://www.google.com/maps/@-31.197,150.744,9z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3"
                                         style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report
-                                        a map error</a></div>
+                                        a map error</a>
+                                </div>
                             </div>
                             <div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false"
                                 controlwidth="40" controlheight="81"
@@ -535,8 +360,8 @@
                                                 style="height: 18px; width: 18px;"></button>
                                         <div
                                             style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); top: 0px;">
-                                        </div><button draggable="false" title="Zoom out" aria-label="Zoom out"
-                                            type="button" class="gm-control-active"
+                                        </div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button"
+                                            class="gm-control-active"
                                             style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; overflow: hidden; width: 40px; height: 40px; top: 0px; left: 0px;"><img
                                                 src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C7h18v4H0V7z%22%2F%3E%0A%3C%2Fsvg%3E%0A"
                                                 style="height: 18px; width: 18px;"><img
@@ -549,8 +374,8 @@
                                 <div class="gmnoprint" controlwidth="40" controlheight="40"
                                     style="display: none; position: absolute;">
                                     <div style="width: 40px; height: 40px;"><button draggable="false"
-                                            title="Rotate map 90 degrees" aria-label="Rotate map 90 degrees"
-                                            type="button" class="gm-control-active"
+                                            title="Rotate map 90 degrees" aria-label="Rotate map 90 degrees" type="button"
+                                            class="gm-control-active"
                                             style="background: none rgb(255, 255, 255); display: none; border: 0px; margin: 0px 0px 32px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 40px; height: 40px; top: 0px; left: 0px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;"><img
                                                 src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A"
                                                 style="height: 18px; width: 18px;"><img
@@ -599,21 +424,21 @@
                             lng: 131.044
                         };
                         var grayStyles = [{
-                            featureType: "all",
-                            stylers: [{
-                                saturation: -90
+                                featureType: "all",
+                                stylers: [{
+                                        saturation: -90
+                                    },
+                                    {
+                                        lightness: 50
+                                    }
+                                ]
                             },
                             {
-                                lightness: 50
+                                elementType: 'labels.text.fill',
+                                stylers: [{
+                                    color: '#ccdee9'
+                                }]
                             }
-                            ]
-                        },
-                        {
-                            elementType: 'labels.text.fill',
-                            stylers: [{
-                                color: '#ccdee9'
-                            }]
-                        }
                         ];
                         var map = new google.maps.Map(document.getElementById('map'), {
                             center: {
@@ -626,9 +451,8 @@
                         });
                     }
                 </script>
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
-                    </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                </script>
 
             </div>
 
@@ -658,8 +482,8 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input class="form-control valid" name="email" id="email" type="email"
-                                        onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                                        placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -703,163 +527,4 @@
     </section>
     <!-- ================ contact section end ================= -->
 
-    <!-- Gallery Start-->
-    <div class="gallery-wrapper lf-padding">
-        <div class="gallery-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery1.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery2.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery3.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery4.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery5.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Gallery End-->
-
-    <footer>
-        <!-- Footer Start-->
-        <div class="footer-area footer-padding">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <!-- logo -->
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod
-                                            tempor incididunt ut labore.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#"> Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>New Products</h4>
-                                <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Support</h4>
-                                <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer bottom -->
-                <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="footer-copy-right">
-                            <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                                template is made with <i class="ti-heart" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="footer-copy-right f-right">
-                            <!-- social -->
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer End-->
-    </footer>
-
-    <!-- JS here -->
-
-    <!-- All JS Custom Plugins Link Here here -->
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="./assets/js/jquery.scrollUp.min.js"></script>
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
-
-</body>
-
-</html>
+@endsection

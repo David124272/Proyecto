@@ -30,8 +30,8 @@
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
                                 <div class="hero__caption">
-                                    <span data-animation="fadeInRight" data-delay=".4s">60% de descuento</span>
-                                    <h1 data-animation="fadeInRight" data-delay=".6s">Colección de <br> Invierno</h1>
+                                    <span data-animation="fadeInRight" data-delay=".4s">Nuevos productos</span>
+                                    <h1 data-animation="fadeInRight" data-delay=".6s">Colección de <br> mujeres</h1>
                                     <p data-animation="fadeInRight" data-delay=".8s">Mejor colección de ropa 2021!</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
@@ -129,64 +129,6 @@
             </div>
         </div>
         <!-- Best Product End-->
-        <!-- Best Collection Start -->
-        <div class="best-collection-area section-padding2">
-            <div class="container">
-                <div class="row d-flex justify-content-between align-items-end">
-                    <!-- Left content -->
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="best-left-cap">
-                            <h2>Mejor colección de este mes</h2>
-                            <p>No te pierdas los nuevos estrenos</p>
-                            <a href="{{ route('product.index') }}" class="btn shop1-btn">Comprar ahora</a>
-                        </div>
-                        <div class="best-left-img mb-30 d-none d-sm-block">
-                            <img src="{{ asset('img/collection/collection1.png') }}" alt="">
-                        </div>
-                    </div>
-                    <!-- Mid Img -->
-                    <div class="col-xl-2 col-lg-2 d-none d-lg-block">
-                        <div class="best-mid-img mb-30 ">
-                            <img src="{{ asset('img/collection/collection2.png') }}" alt="">
-                        </div>
-                    </div>
-                    <!-- Riht Caption -->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="best-right-cap ">
-                            <div class="best-single mb-30">
-                                <div class="single-cap">
-                                    <h4>Playera<br>de invierno</h4>
-                                </div>
-                                <div class="single-img">
-                                    <img src="{{ asset('img/collection/collection3.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="best-right-cap">
-                            <div class="best-single mb-30">
-                                <div class="single-cap active">
-                                    <h4>Menz Winter<br>Jacket</h4>
-                                </div>
-                                <div class="single-img">
-                                    <img src="{{ asset('img/collection/collection4.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="best-right-cap">
-                            <div class="best-single mb-30">
-                                <div class="single-cap">
-                                    <h4>Menz Winter<br> Jacket</h4>
-                                </div>
-                                <div class="single-img">
-                                    <img src="{{ asset('img/collection/collection5.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Best Collection End -->
     </main>
 
 @endsection

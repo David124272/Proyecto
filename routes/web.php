@@ -3,7 +3,9 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
-use DeepCopy\Filter\Filter;
+
+use App\Models\File;
+
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -56,4 +58,16 @@ Route::get('/cart', [CartController::class, 'show'])->name('cart.show')->middlew
 Route::get('cart/clear/{cart}', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
 Route::get('cart/checkout/{cart}', [CartController::class, 'checkout'])->name('cart.checkout')->middleware('auth');
 
-Route::resource('purchase', PurchaseController::class)->only('store')->middleware('auth');
+// Purchases
+Route::resource('purchase', PurchaseController::class)->only(['store', 'index'])->middleware('auth');
+
+// Contact
+Route::get('/contact', function () {
+    return view('contact.contact');
+});
+
+// Files
+Route::get('/files', function () {
+    $files = File::all();
+    return view('file.file-index', compact('files'));
+});

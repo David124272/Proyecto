@@ -22,6 +22,17 @@
     <section class="checkout_area section_padding">
         <div class="container">
             <div class="billing_details">
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ $error }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                    @endforeach
+                @endif
                 <form method="POST" action="{{ route('purchase.store') }}" class="row">
                     @csrf
                     <div class="col-lg-8">
@@ -48,8 +59,7 @@
                                     required />
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" name="ext_number" placeholder="Número exterior"
-                                    required />
+                                <input type="text" class="form-control" name="ext_number" placeholder="Número exterior" />
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="number" class="form-control" name="zipcode" placeholder="Código postal"
@@ -112,6 +122,8 @@
                                 </p>
                             </div>
 
+                            <input type="hidden" name="total" value="{{ $total }}">
+                            <input type="hidden" name="cart_id" value="{{ $cart->id }}">
                             <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                             <button type="submit" class="btn_3">Proceder a pagar</button>
                         </div>

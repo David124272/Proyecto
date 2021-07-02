@@ -26,7 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'admin'
     ];
 
     /**
@@ -62,5 +62,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function carts()
     {
         return $this->hasMany(Cart::class);
+    }
+
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
     }
 }

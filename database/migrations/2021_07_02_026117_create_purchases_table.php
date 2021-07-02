@@ -16,6 +16,9 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('payment_id')->constrained();
+            $table->foreignId('cart_id')->constrained();
+            $table->float('total');
             $table->text('street', 20);
             $table->integer('int_number');
             $table->text('ext_number', 10);
@@ -24,7 +27,6 @@ class CreatePurchasesTable extends Migration
             $table->text('state', 20);
             $table->text('zipcode', 10);
             $table->timestamps();
-            $table->foreignId('payment_id')->constrained();
         });
     }
 

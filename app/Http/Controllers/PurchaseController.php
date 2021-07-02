@@ -15,7 +15,7 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        return view('purchase.purchase-index');
     }
 
     /**
@@ -36,6 +36,19 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'user_id' => 'required',
+            'payment_id' => 'required',
+            'cart_id' => 'required',
+            'total' => 'required',
+            'street' => 'required|string|min:4',
+            'int_number' => 'required|numeric',
+            'phone' => 'required|numeric',
+            'country' => 'required',
+            'state' => 'required',
+            'zipcode' => 'required|numeric|min:5'
+        ]);
+
         Purchase::create($request->all());
 
         $cart = Auth::user()->carts->where('status', 1)->first();

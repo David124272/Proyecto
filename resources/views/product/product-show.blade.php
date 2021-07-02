@@ -53,11 +53,15 @@
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <div class="add_to_cart">
                                     @auth
-                                        <button type="submit" value="submit" class="btn_3">
+                                        <button type="submit" value="submit" class="genric-btn info e-large">
                                             Agregar a carrito
                                         </button>
+                                        @if (auth()->user()->admin)
+                                            <a href="{{ route('product.edit', $product) }}"
+                                                class="genric-btn primary e-large">Editar</a>
+                                        @endif
                                     @else
-                                        <a href="{{ route('login') }}" class="btn_3">Agregar a carrito</a>
+                                        <a href="{{ route('login') }}" class="genric-btn info e-large">Agregar a carrito</a>
                                     @endauth
                                 </div>
                             </form>

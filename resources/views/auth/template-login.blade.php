@@ -40,7 +40,18 @@
                         <div class="login_part_form_iner">
                             <h3>¡Bienvenido de vuelta! <br>
                                 Por favor, inicia sesión ahora</h3>
-                            <x-jet-validation-errors class="alert alert-danger mt-1 mb-1" />
+
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ $error }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                @endforeach
+                            @endif
 
                             @if (session('status'))
                                 <div class="mb-4 font-medium text-sm text-green-600">

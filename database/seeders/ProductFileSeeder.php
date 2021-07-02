@@ -62,10 +62,10 @@ class ProductFileSeeder extends Seeder
             
             Composición: ELASTANO 1%,ALGODÓN 99%',
             'category_id' => 1,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
-            'stars' => 5
+            'stars' => 3
         ]);
 
         DB::table('products')->insert([
@@ -79,10 +79,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 1,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
-            'stars' => 5
+            'stars' => 4
         ]);
 
         DB::table('products')->insert([
@@ -94,7 +94,7 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 1,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
             'stars' => 5
@@ -109,7 +109,7 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 3,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
             'stars' => 5
@@ -124,7 +124,7 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 3,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
             'stars' => 5
@@ -139,7 +139,7 @@ class ProductFileSeeder extends Seeder
             
             Composición: ALGODÓN 100%',
             'category_id' => 2,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
             'stars' => 5
@@ -154,10 +154,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 2,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
-            'stars' => 5
+            'stars' => 1
         ]);
 
         DB::table('products')->insert([
@@ -169,10 +169,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 4,
-            'discount' => 0,
-            'quantity' => 50,
+            //'discount' => 0,
+            'quantity' => 99,
             'status' => 1,
-            'stars' => 5
+            'stars' => 4
         ]);
 
         DB::table('products')->insert([
@@ -184,7 +184,7 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 4,
-            'discount' => 0,
+            //'discount' => 0,
             'quantity' => 50,
             'status' => 1,
             'stars' => 5
@@ -199,10 +199,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 5,
-            'discount' => 0,
-            'quantity' => 50,
+            //'discount' => 0,
+            'quantity' => 39,
             'status' => 1,
-            'stars' => 5
+            'stars' => 4
         ]);
 
         DB::table('products')->insert([
@@ -214,10 +214,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 6,
-            'discount' => 0,
-            'quantity' => 50,
+            //'discount' => 0,
+            'quantity' => 69,
             'status' => 1,
-            'stars' => 5
+            'stars' => 2
         ]);
 
         DB::table('products')->insert([
@@ -229,10 +229,10 @@ class ProductFileSeeder extends Seeder
             
             Cuidado de la prenda:',
             'category_id' => 7,
-            'discount' => 0,
-            'quantity' => 50,
+            //'discount' => 0,
+            'quantity' => 30,
             'status' => 1,
-            'stars' => 5
+            'stars' => 4
         ]);
     }
 }

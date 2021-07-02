@@ -40,7 +40,17 @@
                         <div class="login_part_form_iner">
                             <h3>¡Sé parte de nosotros!<br>
                                 Crea una cuenta y no te pierdas de nada</h3>
-                            <x-jet-validation-errors class="alert alert-danger mt-1 mb-1" />
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ $error }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                @endforeach
+                            @endif
                             <form class="row contact_form" method="POST" action="{{ route('register') }}">
                                 @csrf
 
@@ -63,6 +73,13 @@
                                     <input id="password_confirmation" class="form-control" type="password"
                                         name="password_confirmation" required autocomplete="new-password"
                                         placeholder="{{ __('Confirm Password') }}" />
+                                </div>
+
+                                <div class="col-md-6 form-group p_star">
+                                    <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" id="f-option" name="admin">
+                                        <label for="f-option">Administrador</label>
+                                    </div>
                                 </div>
 
                                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

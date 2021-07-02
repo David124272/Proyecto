@@ -59,8 +59,10 @@
                                     <ul>
                                         @if (Route::has('login'))
                                             @auth
-                                                <li><a href="{{ url('/dashboard') }}">Tablero</a></li>
-                                                <li><a href="#">Mis compras</a></li>
+                                                <li><a href="{{ url('/dashboard') }}">¡Hola,
+                                                        {{ auth()->user()->name }}!</a>
+                                                </li>
+                                                <li><a href="{{ route('purchase.index') }}">Mis compras</a></li>
                                                 <li>
                                                     <form method="POST" action="{{ route('logout') }}">
                                                         @csrf
@@ -115,26 +117,22 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="hot"><a href="#">Lo más nuevo</a>
-                                                <ul class="submenu">
-                                                    <li><a href=" {{ route('product.index') }} "> Lista de
-                                                            productos</a></li>
-                                                    <li><a href=" {{ route('product.create') }} "> Nuevo producto</a>
+                                            <li class="hot"><a href="{{ route('product.index') }}">Lo más nuevo</a>
+                                            </li>
+                                            @auth()
+                                                @if (auth()->user()->admin)
+                                                    <li><a href="#">Administrador</a>
+                                                        <ul class="submenu">
+                                                            <li><a href=" {{ route('product.create') }} "> Nuevo
+                                                                    producto</a>
+                                                            </li>
+                                                            <li><a href="/files">Archivos</a>
+                                                            </li>
+                                                        </ul>
                                                     </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="#">Iniciar sesión</a></li>
-                                                    <li><a href="#">Card</a></li>
-                                                    <li><a href="#">Elementos</a></li>
-                                                    <li><a href="#">Acerca de</a></li>
-                                                    <li><a href="#">Confirmación</a></li>
-                                                    <li><a href="#">Carrito de compras</a></li>
-                                                    <li><a href="#">Product Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Contacto</a></li>
+                                                @endif
+                                            @endauth
+                                            <li><a href="/contact">Contacto</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -153,23 +151,17 @@
                                         </div>
                                     </li>
                                     @auth
-                                        <li class=" d-none d-xl-block">
-                                            <div class="favorit-items">
-                                                <i class="far fa-heart"></i>
-                                            </div>
-                                        </li>
+                                        <!--li class=" d-none d-xl-block">
+                                                                                    <div class="favorit-items">
+                                                                                        <i class="far fa-heart"></i>
+                                                                                    </div>
+                                                                                </li-->
                                         <li>
                                             <div class="shopping-card">
                                                 <a href="{{ route('cart.show') }}">
                                                     <i class="fas fa-shopping-cart"></i>
                                                 </a>
                                             </div>
-                                            <style>
-                                                .shopping-card::before {
-                                                    content: "02"
-                                                }
-
-                                            </style>
                                         </li>
                                     @endauth
                                 </ul>
@@ -225,21 +217,21 @@
                     <div class="single-method mb-40">
                         <i class="ti-package"></i>
                         <h6>Envío gratuito</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p>Contamos con envío gratuito a toda la república mexicana</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="single-method mb-40">
                         <i class="ti-unlock"></i>
                         <h6>Sistema de pago seguro</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p>Tu información está segura con nosotros, tenemos la más alta seguridad</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="single-method mb-40">
                         <i class="ti-reload"></i>
                         <h6>Recibe lo que buscas</h6>
-                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                        <p>Aceptamos devoluciones en caso de inconformidades</p>
                     </div>
                 </div>
             </div>

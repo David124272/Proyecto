@@ -42,21 +42,6 @@
                     @endif
                     <!--End Nav Button  -->
                 </div>
-                <div class="select-this d-flex">
-                    <div class="featured">
-                        <span>Ordenar por: </span>
-                    </div>
-                    <form action="#">
-                        <div class="select-itms">
-                            <select name="select" id="select1">
-                                <option value="">Nombre</option>
-                                <option value="">Fecha</option>
-                                <option value="">Precio</option>
-                                <option value="">Stock</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
             </div>
             <!-- Nav Card -->
             <div class="tab-content" id="nav-tabContent">
@@ -86,7 +71,7 @@
                                         </h4>
                                         <div class="price">
                                             <ul>
-                                                <li>${{ $p->total - ($p->discount * 100) / $p->total }}</li>
+                                                <li>${{ $p->total - ($p->discount / 100) * $p->total }}</li>
                                                 @if ($p->discount != 0)
                                                     <li class="discount">${{ $p->total }}</li>
                                                 @endif
@@ -129,10 +114,13 @@
                                                 </h4>
                                                 <div class="price">
                                                     <ul>
-                                                        <li>${{ $p->total - ($p->discount * 100) / $p->total }}</li>
+                                                        {{ $p->total }}
+                                                        <!--
+                                                        <li>${{ $p->total - ($p->discount / 100) * $p->total }}</li>
                                                         @if ($p->discount != 0)
                                                             <li class="discount">${{ $p->total }}</li>
                                                         @endif
+                                                        -->
                                                     </ul>
                                                 </div>
                                             </div>

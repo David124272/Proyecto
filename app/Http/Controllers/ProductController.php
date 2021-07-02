@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -61,6 +62,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+        Gate::authorize('admin-products');
         return view('product/product-form');
     }
 
@@ -72,12 +74,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        Gate::authorize('admin-products');
         $request->validate([
             'name' => 'required|string|min:5|max:255',
             'description' => 'required|string|min:5|max:255',
             'category_id' => 'required',
-            'quantity' => 'required',
-            'total' => 'required'
+            'quantity' => 'required|numeric|min:0',
+            'total' => 'required',
+            'files.*' => 'mimes:jpeg,jpg,png,gif|required'
         ]);
 
         $product = new Product();
@@ -87,6 +91,7 @@ class ProductController extends Controller
         $product->description = strtoupper($request->description);
         $product->category_id = $request->category_id;
         $product->quantity = $request->quantity;
+        //$product->discount = $request->discount;
         $product->total = $request->total;
 
         $product->save();
@@ -116,7 +121,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('product/product-form');
+        return view('product/product-edit', compact('product'));
     }
 
     /**
@@ -128,7 +133,27 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        Gate::authorize('admin-products');
+        $request->validate([
+            'name' => 'required|string|min:5|max:255',
+            'description' => 'required|string|min:5',
+            'category_id' => 'required',
+            'quantity' => 'required|numeric|min:0',
+            'total' => 'required',
+            'files.*' => 'mimes:jpeg,jpg,png,gif|required'
+        ]);
+
+        $product->status = (int)($request->status == null);
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->category_id = $request->category_id;
+        $product->quantity = $request->quantity;
+        //$product->discount = $request->discount;
+        $product->total = $request->total;
+
+        $product->save();
+
+        return view('product.product-show', compact('product'));
     }
 
     /**
@@ -139,6 +164,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }

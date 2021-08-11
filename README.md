@@ -10,6 +10,18 @@ _Proyecto de una tienda de ropa en línea con las funciones básicas que este ti
 - Carrito de compras con diferentes productos
 - Carga de múltiples imágenes por producto
 
+##### Página principal
+[Página principal](./assets/main.png)
+
+##### Vista de productos
+[Vista de productos](./assets/products-view.png)
+
+##### Añadir a carrito
+[Añadir a carrito](./assets/add-to-cart.png)
+
+##### Pagar carrito
+[Pagar carrito](./assets/payment.png)
+
 ##### Instrucciones de uso
 
 Usar los siguientes seeders para cargar las categorías y tipos de pago
